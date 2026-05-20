@@ -120,6 +120,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - alessandrofelder
     - chrisburr
 
   feedstock-name: rapidyaml
