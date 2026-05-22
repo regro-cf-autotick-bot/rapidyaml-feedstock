@@ -1,5 +1,5 @@
 context:
-  version: "0.11.0"
+  version: "0.13.0"
 
 recipe:
   name: rapidyaml
@@ -7,10 +7,10 @@ recipe:
 
 source:
   url: https://github.com/biojppm/rapidyaml/releases/download/v${{ version }}/rapidyaml-${{ version }}-src.tgz
-  sha256: 46e42f656a767b9ecaf9b903b6f6a9c72453359ee9cbf488d510d0558ff5ab78
+  sha256: b70b484b612152b0dbb2ca61178c9534d80c392fe36d4d54e75d127ec8864d52
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - package:
@@ -70,11 +70,11 @@ outputs:
   - package:
       name: rapidyaml
       version: ${{ version }}
-    build:      
+    build:
       script:
-          env:
-            SETUPTOOLS_SCM_PRETEND_VERSION: ${{ version }}
-          content:
+        env:
+          SETUPTOOLS_SCM_PRETEND_VERSION: ${{ version }}
+        content:
           - if: unix
             then: $PYTHON -m pip install . -vv --no-deps --no-build-isolation
           - if: win
